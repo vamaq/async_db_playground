@@ -1,0 +1,6 @@
+*.pyc
+.idea
+async_db_playground.iml
+/other
+/doc
+
