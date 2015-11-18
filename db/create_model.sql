@@ -2,12 +2,12 @@
 
 \i ./schemas/create_core.sql
 
-/**** TABLAS *****/
+/**** TABLES *****/
 
 \i ./model/magic_project.sql
 \i ./model/magic_project_mirror.sql
 
-/**** FUNCIONES *****/
+/**** FUNCTIONS *****/
 
 \i ./functions/table_id_notify.sql
 

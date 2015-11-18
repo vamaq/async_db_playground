@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION table_id_notify() RETURNS trigger AS $$
-    /* Funcion generica para notificar mediante trigger */
+    /* Generic function to create notifications through triggers  */
 DECLARE
   data JSON;
 BEGIN
@@ -12,7 +12,7 @@ BEGIN
       TG_ARGV[0], -- Listening channel
       json_build_object('table_name',TG_TABLE_NAME::VARCHAR,
                         'operation',TG_OP::VARCHAR,
-                        'data',data)::text); -- json_build_object -> Disponibles en 9.4
+                        'data',data)::text); -- json_build_object -> Available since 9.4
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;

@@ -1,19 +1,19 @@
-CREATE SCHEMA core; -- Crea el schema
+CREATE SCHEMA core; -- Creates the new schema
 
 --------------------------------------
---  Deja el nuevo schema como default
+--  Set new Schema as default on new connection.
 DO
 $do$
 DECLARE
-  search_parth VARCHAR;
+  search_path VARCHAR;
   current_database VARCHAR := current_database();
 BEGIN
   SELECT array_to_string(ARRAY(
         SELECT DISTINCT trim(unnest(string_to_array(current_setting('search_path')||',core', ',')))
-  ),',') INTO search_parth;
-  EXECUTE 'ALTER DATABASE '||current_database||' SET search_path TO '||search_parth;
+  ),',') INTO search_path;
+  EXECUTE 'ALTER DATABASE '||current_database||' SET search_path TO '||search_path;
 END $do$;
 
 --------------------------------------
--- deja el schema seteado para el resto de la session.
+-- Set the new schema as default for this connection.
 SET SCHEMA 'core';

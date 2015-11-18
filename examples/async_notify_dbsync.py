@@ -3,8 +3,8 @@
 updates from the DB and in this way, keep both tables on data sync.
 This is a proof of concept to use python3 + asyncio + ThreadPoolExecutor + Postgresql notifications + psycopg2 +
 sqlalchemy.
-If you want to perform the same operation is higly recomended that you choose a diferent aproach as might be triggers +
-postgres_fdw at the postgresql DB. """
+If you want to perform the same operation is highly recommended ed that you choose a different approach as might be
+triggers + postgres_fdw at the postgresql DB or any supported replication mechanism """
 
 import os
 import asyncio
@@ -84,7 +84,7 @@ def get_session():
 def start():
 
     # Thread pool ###
-    pool = ThreadPoolExecutor(10)  # The pool is relative small. It's not thinked for multi row updates
+    pool = ThreadPoolExecutor(10)  # The pool is relative small. It's not intended for bulk updates
 
     # Setup DB connection ###
     conn = get_conn()
