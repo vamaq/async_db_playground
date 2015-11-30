@@ -13,16 +13,16 @@ Database:
 * Creation: To create the database you should use the commands listed in db/create_db.sql
 * Model: To deploy the model you should use the script db/adm_deploy_db.sh or manually deploy it in the order listed in db/create_model.sql
 
-### examples / async_notify.py
+### examples / async_notify /
 
 This is a simple Proof of Concept to get real time notifications from the Database and display them on the screen.
 I'll use the base of this POC for async_notify_dbsync. 
  
-### examples / async_notify_dbsync.py
+### examples / async_db_sync /
 
 This POC aims to create a replication mechanism between two given tables using:
 * python3.5 (asyncio + ThreadPoolExecutor +  psycopg2 + sqlalchemy)
-* Postgresql 9.4 (Notifications + json features)
+* Postgresql 9.4 (Notifications + json features).py
 It's not intended to be used as a replication mechanisms in a production environment. Is just a POC.
 Several implementation decisions are based on [this zzzeek blog entry](http://techspot.zzzeek.org/2015/02/15/asynchronous-python-and-databases/) if you are interested I recommend you to read it.
  
